@@ -49,6 +49,10 @@ app.put("/image", (req, res) => {
   image.handleImage(req, res, smartBrainDB);
 });
 
+app.post("/imageURL", (req, res) => {
+  image.handleImageURL(req, res);
+});
+
 app.listen(port, () => {
   console.log("app is running on port " + port);
 });
