@@ -26,11 +26,12 @@ const smartBrainDB = knex({
 });
 
 app.get("/", (req, res) => {
-  smartBrainDB
-    .select("*")
-    .from("users")
-    .then((db) => res.json(db))
-    .catch((err) => res.status(400).json("get db error"));
+  // smartBrainDB
+  //   .select("*")
+  //   .from("users")
+  //   .then((db) => res.json(db))
+  //   .catch((err) => res.status(400).json("get db error"));
+  res.json("It is working!");
 });
 
 app.post("/signin", (req, res) => {
