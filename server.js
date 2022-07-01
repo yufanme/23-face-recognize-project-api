@@ -14,14 +14,22 @@ app.use(cors());
 
 const port = process.env.PORT || 3000;
 
+// const smartBrainDB = knex({
+//   client: "pg",
+//   connection: {
+//     host: "127.0.0.1",
+//     port: 5432,
+//     user: "fan",
+//     password: "",
+//     database: "smart-brain",
+//   },
+// });
+
 const smartBrainDB = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    port: 5432,
-    user: "fan",
-    password: "",
-    database: "smart-brain",
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
